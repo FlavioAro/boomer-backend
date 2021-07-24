@@ -27,7 +27,10 @@ CREATE TABLE `product` (
 	`product_type` VARCHAR(250) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
 	`brand` VARCHAR(250) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
 	`description` VARCHAR(250) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+	`created_at` DATETIME NULL DEFAULT current_timestamp(),
+	`updated_at` DATETIME NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
 	PRIMARY KEY (`id`) USING BTREE
 )
 COLLATE='latin1_swedish_ci'
-ENGINE=InnoDB;
+ENGINE=InnoDB
+AUTO_INCREMENT=1;

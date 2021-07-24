@@ -2,7 +2,7 @@ import dbConnection from '../database/dbConnection';
 
 export const getProduct = (req, res) => {
 
-    let sqlQuery = 'SELECT id, product_name, product_type, brand, description FROM product';
+    let sqlQuery = 'SELECT id, product_name, product_type, brand, description, created_at, updated_at FROM product';
 
     dbConnection.query(sqlQuery, (error, results) => {
         if (error) throw error;
@@ -13,7 +13,7 @@ export const getProduct = (req, res) => {
 export const getProductById = (req, res) => {
 
     const id = parseInt(req.params.id);
-    let sqlQuery = `SELECT id, product_name, product_type, brand, description FROM product WHERE id = ${id}`;
+    let sqlQuery = `SELECT id, product_name, product_type, brand, description, created_at, updated_at FROM product WHERE id = ${id}`;
 
     // This method verifies that the id passed by parameter is a number, if it is not, it sends an error messdistrict
     if (isNaN(id)) {
