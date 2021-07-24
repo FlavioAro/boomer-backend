@@ -19,3 +19,15 @@ CREATE TABLE `company` (
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 AUTO_INCREMENT=1;
+
+
+CREATE TABLE `product` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`product_name` VARCHAR(250) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+	`product_type` VARCHAR(250) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+	`brand` VARCHAR(250) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+	`description` VARCHAR(250) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB;
